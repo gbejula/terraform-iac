@@ -1,4 +1,4 @@
-Terraform is an infrastructure provisioning tools. It allows automation and management of infrastructure.
+# Terraform is an infrastructure provisioning tools. It allows automation and management of infrastructure.
 
 Terraform is open source.
 
@@ -20,3 +20,17 @@ Differences
 Terraform - it is mainly an infrastructure provisioning tools. It can also deploy apps. It is relatively new and more advanced in orchestration.
 
 Ansible - It is maninly a configuration tool. It can also configure infrastructure, deploy apps, install/update software. It is more mature.
+
+---
+
+Terraform can be used to replicate infrastructure on multiple servers.
+
+## TERRAFORM ARCHITECTURE
+
+_Terraform Cor_
+
+It uses 2 input sources. **Terraform config which is the code that is written and**
+**Terraform state which stores the current state of the setup**
+
+_Terraform provider_
+The providers checks the platform that is been communicated with.
