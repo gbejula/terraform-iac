@@ -34,3 +34,9 @@ It uses 2 input sources. **Terraform config which is the code that is written an
 
 _Terraform provider_
 The providers checks the platform that is been communicated with.
+
+Different stages of Terraform
+
+1. Init
+2. plan
+3. apply
