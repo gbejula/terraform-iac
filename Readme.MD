@@ -38,5 +38,6 @@ The providers checks the platform that is been communicated with.
 Different stages of Terraform
 
 1. Init
-2. plan
-3. apply
+2. plan - create
+3. apply - execute
+4. destroy - remove
