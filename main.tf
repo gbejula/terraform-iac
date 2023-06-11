@@ -1,15 +1,21 @@
 provider "aws" {
   region = "us-east-1"
-  access_key = ""
-  secret_key = ""
 }
 
+variable avail_zone {}
+
 resource "aws_vpc" "development-vpc" {
-  cidr_block = "10.0.0.0/16" 
+  cidr_block = var.cidr_blocks[0].cidr_block
+  tags = {
+    Name: var.cidr_blocks[0].name
+  }
 }
 
 resource "aws_subnet" "dev-subnet-1" {
   vpc_id = aws_vpc.development-vpc.vpc_id
-  cidr_block = "10.0.10.0/24"
-  availability_zone = "us-east-1"
+  cidr_block = var.cidr_blocks[1].cidr_block
+  availability_zone = var.avail_zone
+  tags = {
+    Name: var.cidr_blocks[1].name
+  }
 }
