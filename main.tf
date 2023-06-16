@@ -89,3 +89,27 @@ resource "aws_security_group" "myapp-sg" {
       Name: "${var.env_prefix}-sg"
     }
 }
+
+data "aws_ami" "latest-amazon-linux-image" {
+  most_recent = true
+  owners = ["amazon"]
+  filter {
+    name = "name"
+    values = ["al2023-ami-2023-*-x86_64"]
+  }
+  filter {
+    name = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+output "aws_ami_id" {
+  value = data.aws_ami.latest-amazon-linux-image
+}
+
+# resource "aws_instance" "myapp-server" {
+#   ami = data.ami.lastest-amazon-linux-image.id
+#   instance_type = var.instance_type
+
+#   subnet_id = aws_subnet.myapp-subnet-1
+# }
